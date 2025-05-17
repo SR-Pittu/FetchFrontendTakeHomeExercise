@@ -1,0 +1,194 @@
+/* FilterOptions.css */
+.filter-options-container {
+    border: 1px solid #d4d4d4;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    background-color: #f9f9f9;
+}
+
+.filter-description {
+    color: #555;
+    margin-bottom: 16px;
+    font-size: 0.9em;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Breed Select Styling */
+.breed-select-container {
+    width: 100%;
+}
+
+.react-select__control {
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    box-shadow: none !important;
+    &:hover {
+        border-color: #6c757d !important;
+    }
+}
+
+.react-select__placeholder {
+    color: #999;
+}
+
+.react-select__indicator-separator {
+    display: none;
+}
+
+.react-select__dropdown-indicator {
+    color: #6c757d;
+    padding: 8px;
+    &:hover {
+        color: #495057;
+    }
+}
+
+.react-select__menu {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-select__option {
+    padding: 8px 12px;
+    color: #333;
+    cursor: pointer;
+    &:hover {
+        background-color: #e9ecef;
+        color: #000;
+    }
+    &--is-focused {
+        background-color: #e9ecef;
+        color: #000;
+    }
+    &--is-selected {
+        background-color: #007bff;
+        color: white;
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+}
+
+/* Selected Breeds Display */
+.selected-breeds-container {
+    margin-top: 12px;
+}
+
+.selected-breed-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.selected-breed-item {
+    background-color: #e0f7fa;
+    color: #00838f;
+    padding: 6px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9em;
+}
+
+.remove-breed-button {
+    border: none;
+    background: none;
+    color: #d32f2f;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 0;
+    line-height: 1;
+    &:hover {
+        color: #c62828;
+    }
+}
+
+/* Age Input Styling */
+.age-input-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.age-input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.age-separator {
+    color: #555;
+    font-size: 1.2em;
+}
+
+/* Sort Select Styling */
+.sort-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+    padding-right: 24px;
+    &:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+}
+
+/* Buttons Styling */
+.buttons-container {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.apply-button,
+.reset-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button {
+    background-color: #007bff;
+    color: white;
+    &:hover {
+        background-color: #0056b3;
+    }
+}
+
+.reset-button {
+    background-color: #6c757d;
+    color: white;
+    &:hover {
+        background-color: #545b62;
+    }
+}

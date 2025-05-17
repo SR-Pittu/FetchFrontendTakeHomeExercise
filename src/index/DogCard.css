@@ -1,0 +1,52 @@
+.dog-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: 260px;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .dog-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .dog-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .favorite-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .favorite-button.add {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .favorite-button.add:hover {
+    background-color: #45a049;
+  }
+  
+  .favorite-button.remove {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .favorite-button.remove:hover {
+    background-color: #e53935;
+  }
+  
