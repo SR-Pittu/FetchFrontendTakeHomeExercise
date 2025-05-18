@@ -9,13 +9,11 @@ const FilterOptions = ({
     initialSort = 'breed:asc',
     initialAgeMin = '',
     initialAgeMax = '',
-    initialCity = ''
 }) => {
     const [selectedBreeds, setSelectedBreeds] = useState(initialBreeds);
     const [sortOption, setSortOption] = useState(initialSort);
     const [ageMin, setAgeMin] = useState(initialAgeMin);
     const [ageMax, setAgeMax] = useState(initialAgeMax);
-    const [city, setCity] = useState(initialCity);
     const [selectedReactSelectValue, setSelectedReactSelectValue] = useState(initialBreeds.map(breed => ({ value: breed, label: breed })));
 
     const breedOptions = breeds.map(breed => ({ value: breed, label: breed }));
@@ -36,8 +34,6 @@ const FilterOptions = ({
     };
 
     const handleSortChange = (e) => setSortOption(e.target.value);
-
-    const handleCityChange = (e) => setCity(e.target.value);
 
     const handleApplyFilters = () => {
         onFilterChange({
@@ -121,17 +117,6 @@ const FilterOptions = ({
                     />
                 </div>
             </div>
-            <div className="filter-section">
-                <h4 className="filter-label">City:</h4>
-                <input
-                    type="text"
-                    placeholder="Enter city"
-                    value={city}
-                    onChange={handleCityChange}
-                    className="city-input"
-                />
-            </div>
-
             {/* Sort Options */}
             <div className="filter-section">
                 <h4 className="filter-label">Sort By:</h4>

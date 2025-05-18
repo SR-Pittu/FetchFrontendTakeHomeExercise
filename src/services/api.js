@@ -145,4 +145,3 @@ export const generateMatch = async (favoriteDogIds) => {
     throw error;
   }
 };
-
