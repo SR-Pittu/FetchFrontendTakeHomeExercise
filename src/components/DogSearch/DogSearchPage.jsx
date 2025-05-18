@@ -4,10 +4,11 @@ import {
   searchDogs,
   getDogDetails,
   generateMatch,
+  logout,
 } from "../../services/api";
 import DogList from "./DogList";
 import FilterOptions from "./FilterOptions";
-import Pagination from "./Pagination"; 
+import Pagination from "./Pagination";
 import DogMatch from "./DogMatch";
 import "../../index/DogSearchPage.css";
 
@@ -42,7 +43,7 @@ function DogSearchPage() {
     };
     fetchBreeds();
   }, []);
-  
+
   useEffect(() => {
     fetchDogs();
   }, [filters, currentPage, pageSize]);
@@ -87,7 +88,7 @@ function DogSearchPage() {
   };
 
   const handlePageChange = (newPage) => {
-    if (newPage < 1) return; // prevent going before page 1
+    if (newPage < 1) return;
     setCurrentPage(newPage);
   };
 
@@ -145,16 +146,26 @@ function DogSearchPage() {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      // Redirect to login page or homepage after logout
+      window.location.href = "/login";
+    } catch (error) {
+      alert("Logout failed. Please try again.");
+    }
+  };
+
   return (
     <div className="dog-search-page">
       <header className="header">
         <div className="container">
           <h1 className="title">🐶 Find Your Perfect Dog!</h1>
-          <p className="subtitle">
-            Browse through our selection of adorable dogs. Use the filters to
-            narrow down your search and find your ideal companion.
-          </p>
+          <button className="logout-button" onClick={handleLogout}>
+          Logout
+        </button>
         </div>
+        
       </header>
 
       <main className="main-content">
