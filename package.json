@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://SR-Pittu.github.io/FetchFrontendTakeHomeExercise",
+  "homepage": "https://sr-pittu.github.io/FetchFrontendTakeHomeExercise",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
