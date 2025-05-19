@@ -96,3 +96,5 @@ src/
 4. Open the application in your browser at http://localhost:3000
 
 5. You can open the application in your browser at https://fetchfrontendexercise.netlify.app
+   </br>
+   (Note: Please enable your cookies while using the above link.)
