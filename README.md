@@ -1,34 +1,4 @@
-# Dog Fetch Application
-
-This is a web application built using **React**, **HTML**, **CSS**, and **JavaScript**. The application allows users to search for and explore information about different dog breeds.
-
-## Features
-
-- **Search Functionality**: Search for dogs by breed name.
-- **Responsive Design**: Optimized for both desktop and mobile devices.
-- **Interactive UI**: Hover effects, transitions, and dynamic updates.
-- **Logout Button**: A styled logout button with hover effects.
-
-## Technologies Used
-
-- **React**: For building the user interface and managing state.
-- **HTML**: For structuring the web pages.
-- **CSS**: For styling the application, including animations and responsive design.
-- **JavaScript**: For adding interactivity and handling logic.
-
-## Installation
-
-1. Clone the repository:
-   bash
-   ```
-   git clone https://github.com/your-username/dog-search-app.git
-   ```
-   ```
-   cd dog-search-app
-   ```
-
-
-# Dog Fetch Application
+#  FetchFrontendTakeHomeExercise Application
 
 A responsive React application that allows users to search for and explore information about different dog breeds. Built using React, HTML, CSS, and JavaScript.
 
@@ -96,6 +66,8 @@ src/
    ```
 4. Open the application in your browser at http://localhost:3000
 
-5. You can open the application in your browser at https://fetchfrontendexercise.netlify.app
+   </br> Or </br></br>
+   
+You can open the application in your browser at https://fetchfrontendexercise.netlify.app
    </br>
    (Note: Please enable your cookies while using the above link.)
