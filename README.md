@@ -20,8 +20,12 @@ This is a web application built using **React**, **HTML**, **CSS**, and **JavaSc
 
 1. Clone the repository:
    bash
-   ```git clone https://github.com/your-username/dog-search-app.git```
-   ```cd dog-search-app```
+   ```
+   git clone https://github.com/your-username/dog-search-app.git
+   ```
+   ```
+   cd dog-search-app
+   ```
 
 
 # Dog Fetch Application

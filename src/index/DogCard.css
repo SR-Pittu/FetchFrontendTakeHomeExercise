@@ -44,11 +44,11 @@
   }
   
   .favorite-button.remove {
-    background-color: #f44336;
+    background-color:rgb(231, 131, 85);
     color: white;
   }
   
   .favorite-button.remove:hover {
-    background-color: #e53935;
+    background-color: saddlebrown;
   }
   

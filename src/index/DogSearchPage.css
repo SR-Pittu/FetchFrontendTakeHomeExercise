@@ -60,13 +60,13 @@ body{
 .logout-button {
   position: absolute;
   right: 40px;
-  background-color: #ffffff;
+  background-color: transparent;
   color: blueviolet;
   padding: 0.75rem 1.25rem;
   font-weight: bold;
   font-size: 1rem;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease;
   top: 50%;
@@ -127,11 +127,29 @@ body{
   color: #999;
 }
 
+.no-dogs-message {
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #e6b515;
+  color: #3d2f03;
+  border: 1px solid #e6b515;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /* Favorites Section Styling */
 .favorites-section {
   margin-top: 3rem;
   padding: 1.5rem;
-  background-color: #fef6f6;
+  background-color:rgb(223, 211, 223);
   border: 1px solid #e8c6c6;
   border-radius: 10px;
 }
@@ -146,13 +164,15 @@ body{
 
 .favorites-section h3 {
   font-size: 1.8em;
-  color: #e53935;
+  color:seagreen;
+  cursor: pointer;
 }
+
 
 /* Match button */
 .match-button {
   padding: 0.75rem 1.5rem;
-  background-color: #ff6b81;
+  background-color:cornflowerblue;
   color: white;
   border: none;
   border-radius: 6px;
@@ -163,20 +183,26 @@ body{
 }
 
 .match-button:hover:not(:disabled) {
-  background-color: #ff4b61;
+  background-color:darkorchid;
 }
 
-.match-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.info-message {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff3cd;
+  color: #614c0e;
+  border: 1px solid #ffeeba;
+  border-radius: 5px;
+  font-size: 20px;
 }
+
 
 /* Match result box */
 .match-result {
   margin-top: 1rem;
   padding: 1rem;
   background-color: #dff0d8;
-  border-left: 5px solid #3c763d;
+  border-left: 5px solid #4a854b;
   border-radius: 8px;
 }
 
@@ -257,24 +283,10 @@ body{
   box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.2);
 }
 
-/* Footer Styling */
-.footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-.footer p {
-  font-size: 0.95em;
-  margin: 0;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .container {
-    padding: 0 20px;
+  .container-body {
+    padding: 10px 40px 10px 10px;
   }
   .filter-and-list {
     flex-direction: column;

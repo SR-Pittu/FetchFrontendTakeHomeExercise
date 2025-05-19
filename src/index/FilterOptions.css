@@ -1,7 +1,5 @@
 /* FilterOptions.css */
 .filter-options-container {
-    position: sticky;
-    top: 1rem;
     border: 1px solid #d4d4d4;
     padding: 20px;
     border-radius: 12px;
@@ -50,10 +48,10 @@
 }
 
 .react-select__dropdown-indicator {
-    color: #6c757d;
+    color: #aac0d3;
     padding: 8px;
     &:hover {
-        color: #495057;
+        color: #084581;
     }
 }
 
@@ -180,17 +178,19 @@
 }
 
 .apply-button {
-    background-color: #007bff;
+    font-weight: bold;
+    background-color: #3a92f0;
     color: white;
     &:hover {
-        background-color: #0056b3;
+        background-color: #1d518a;
     }
 }
 
 .reset-button {
-    background-color: #6c757d;
+    font-weight: bold;
+    background-color:plum;
     color: white;
     &:hover {
-        background-color: #545b62;
+        background-color:rgb(133, 79, 133);
     }
 }

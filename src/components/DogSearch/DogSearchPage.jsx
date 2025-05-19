@@ -26,7 +26,7 @@ function DogSearchPage() {
   const [favorites, setFavorites] = useState([]);
   const [match, setMatch] = useState(null);
   const [matchLoading, setMatchLoading] = useState(false);
-
+  const [infoMessage, setInfoMessage] = useState("");
   const [pageSize, setPageSize] = useState(25);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -102,26 +102,34 @@ function DogSearchPage() {
 
   const handleGenerateMatch = async () => {
     if (favorites.length === 0) {
-      alert("Please select at least one favorite dog to generate a match.");
+      if (match) {
+        setMatch(null);
+      }
+      setInfoMessage(
+        "You 0 favourite Dogs. Please select at least one dog to generate a match."
+      );
       return;
     }
+
     if (favorites.length > 100) {
-      alert("You can only select up to 100 favorite dogs.");
+      setInfoMessage("You can only select up to 100 favorite dogs.");
       return;
     }
 
     setMatchLoading(true);
+    setInfoMessage("");
     try {
       const matchData = await generateMatch(favorites);
       if (matchData && matchData.match) {
         const details = await getDogDetails([matchData.match]);
         if (details && details.length > 0) {
           setMatch(details[0]);
+          setInfoMessage("");
         }
       }
     } catch (error) {
       console.error("Error generating match:", error);
-      alert("Failed to generate match. Please try again.");
+      setInfoMessage("Failed to generate match. Please try again.");
     } finally {
       setMatchLoading(false);
     }
@@ -156,10 +164,9 @@ function DogSearchPage() {
         <div className="container-header">
           <h1 className="title">🐶 Find Your Perfect Dog!</h1>
           <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
+            Logout
+          </button>
         </div>
-        
       </header>
 
       <main className="main-content">
@@ -178,6 +185,12 @@ function DogSearchPage() {
             <section className="dog-list-section">
               {loading ? (
                 <div className="loading-indicator">Loading dogs...</div>
+              ) : dogs.length === 0 ? (
+                <div className="no-dogs-message">
+                  🐾 No dogs found with the given criteria.
+                  <br />
+                  🔄 Please try again by adjusting your filters or resetting them!
+                </div>
               ) : (
                 <>
                   <div className="page-size-selector">
@@ -217,16 +230,11 @@ function DogSearchPage() {
           <section className="favorites-section">
             <div className="favorites-header">
               <h3>❤️ Favorites ({favorites.length})</h3>
-              {favorites.length > 0 && (
-                <button
-                  onClick={handleGenerateMatch}
-                  className="match-button"
-                  disabled={matchLoading}
-                >
-                  {matchLoading ? "Matching..." : "Generate Match"}
-                </button>
-              )}
+              <button onClick={handleGenerateMatch} className="match-button">
+                {matchLoading ? "Matching..." : "Generate Match"}
+              </button>
             </div>
+            {infoMessage && <div className="info-message">{infoMessage}</div>}
             <DogMatch match={match} />
           </section>
         </div>
