@@ -1,4 +1,10 @@
-/* General Page Styling */
+/*
+  Dog Search Page CSS
+  This file contains the styles for the Dog Search Page component.
+  It includes styles for the header, sidebar, dog list, and footer.
+  The design is responsive and adapts to different screen sizes.
+*/
+
 .dog-search-page {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
@@ -8,6 +14,13 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* Full-width container */
@@ -20,25 +33,50 @@
 
 /* Header Styling */
 .header {
+  position: relative;
   background-color: #ffffff;
-  padding: 5px 0;
-  text-align: center;
   border-bottom: 1px solid #e0e0e0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 80px;
 }
 
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  position: relative;
+}
+
+/* Title centered horizontally */
 .title {
   font-size: 3em;
-  font-family: Brush Script;
-  margin-bottom: 1rem;
+  font-family: Brush Script, cursive;
   color: darkslateblue;
+  margin: 0;
+  user-select: none;
+  white-space: nowrap;
 }
 
-.subtitle {
-  font-family: Brush Script;
-  font-size: 1.6em;
-  color: #333;
-  margin: 0;
+/* Logout button aligned right */
+.logout-button {
+  position: absolute;
+  right: 40px;
+  background-color: #ffffff;
+  color: blueviolet;
+  padding: 0.75rem 1.25rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logout-button:hover {
+  background-color: blueviolet;
+  color: white;
 }
 
 /* Main Content Styling */
@@ -53,8 +91,7 @@
   gap: 40px;
   align-items: flex-start;
   flex-wrap: nowrap;
-  padding-left: 20px; /* Added horizontal padding */
-  padding-right: 20px; /* Added horizontal padding */
+  padding: 0 20px; 
 }
 
 /* Sidebar (Filter Options) Styling */
@@ -64,24 +101,26 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-
   position: sticky;
-  top: 1rem; /* adjust offset from top as you want */
+  top: 1rem;
   max-height: calc(100vh - 2rem);
-  overflow-y: auto; /* scroll inside sidebar if content overflows */
+  overflow-y: auto;
 }
+
+
 
 /* Dog List Section Styling */
 .dog-list-section {
   flex: 1 1 auto;
-  min-width: 300px; /* prevent shrinking too small */
+  min-width: 300px;
   background-color: #fff;
-  padding: 20px 20px; /* added horizontal padding */
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  overflow-x: auto; /* prevent overflow issues */
+  overflow-x: auto;
 }
 
+/* Loading indicator */
 .loading-indicator {
   text-align: center;
   padding: 30px;
@@ -111,6 +150,7 @@
   color: #e53935;
 }
 
+/* Match button */
 .match-button {
   padding: 0.75rem 1.5rem;
   background-color: #ff6b81;
@@ -123,10 +163,16 @@
   transition: background-color 0.3s ease;
 }
 
-.match-button:hover {
+.match-button:hover:not(:disabled) {
   background-color: #ff4b61;
 }
 
+.match-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Match result box */
 .match-result {
   margin-top: 1rem;
   padding: 1rem;
@@ -141,6 +187,7 @@
   margin-bottom: 15px;
 }
 
+/* Dog card inside match */
 .dog-card-match {
   display: flex;
   align-items: center;
@@ -174,86 +221,7 @@
   color: #333;
 }
 
-/* Footer Styling */
-.footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-.footer p {
-  font-size: 0.95em;
-  margin: 0;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 20px;
-  }
-  .filter-and-list {
-    flex-direction: column;
-    flex-wrap: wrap;
-    overflow-x: visible;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .sidebar {
-    position: relative;
-    max-height: none;
-    overflow-y: visible;
-    flex: none;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .dog-list-section {
-    width: 100%;
-    min-width: auto;
-    padding: 20px;
-    overflow-x: visible;
-  }
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 2rem;
-  }
-
-  .favorites-header {
-    flex-direction: column;
-  }
-
-  .dog-card-match {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .match-details {
-    text-align: center;
-  }
-
-  .match-button {
-    width: 100%;
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 20px 0;
-  }
-
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .footer {
-    padding: 15px 0;
-  }
-}
-
+/* Pagination / Page size selector */
 .page-size-selector {
   margin-bottom: 1.5rem;
   display: flex;
@@ -290,20 +258,87 @@
   box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.2);
 }
 
-.logout-button {
-    text-size-adjust: 1px;
-float: right;
-  background-color:  #ffffff; /* red */
-  color:blueviolet;
-  padding: 1rem 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
+/* Footer Styling */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
 }
 
-.logout-button:hover {
-  background-color: blanchedalmond;
+.footer p {
+  font-size: 0.95em;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+  .filter-and-list {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .sidebar {
+    position: sticky;
+    max-height: none;
+    overflow-y: visible;
+    flex: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .dog-list-section {
+    width: 100%;
+    min-width: auto;
+    padding: 20px;
+    overflow-x: visible;
+  }
+  .header {
+    padding: 1rem 20px;
+  }
+  .header .container {
+    justify-content: center;
+  }
+  .logout-button {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .favorites-header {
+    flex-direction: column;
+  }
+  .dog-card-match {
+    flex-direction: column;
+    text-align: center;
+  }
+  .match-details {
+    text-align: center;
+  }
+  .match-button {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem 10px;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .footer {
+    padding: 15px 0;
+  }
+  .logout-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
 }

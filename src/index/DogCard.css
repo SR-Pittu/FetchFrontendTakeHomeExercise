@@ -5,7 +5,8 @@
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     text-align: center;
-    width: 260px;
+    width: 100%;
+    max-width: 260px;
     margin: 10px;
     transition: transform 0.2s ease-in-out;
   }
