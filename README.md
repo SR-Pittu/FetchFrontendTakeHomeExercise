@@ -48,9 +48,18 @@ src/
 
 ## ▶️ Getting Started
 
-1. You can reun the app locally by ***Cloning the Repository*** using the following commands:
+
+
+You can open the application in your browser at https://fetchfrontendexercise.netlify.app
+   </br>
+   (Note: Please enable the cookies while using above link)
+   
+   
+</br>Or</br>
+
+1. You can run the app locally by ***Cloning the Repository*** using the following commands:
    ```
-   https://github.com/SR-Pittu/FetchFrontendTakeHomeExercise.git
+   git clone https://github.com/SR-Pittu/FetchFrontendTakeHomeExercise.git
    cd FetchFrontendTakeHomeExercise
    ```
 
@@ -66,8 +75,3 @@ src/
    ```
 4. Open the application in your browser at http://localhost:3000
 
-   </br> Or </br></br>
-   
-You can open the application in your browser at https://fetchfrontendexercise.netlify.app
-   </br>
-   (Note: Please enable your cookies while using the above link.)
