@@ -1,75 +1,125 @@
-.login-page .container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f3f4f6;
+/* Container styling */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(  -30deg,#fff4e6,   #fffee6,  #e6fff4, #e6f1ff);
+
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+
+/* Card styling */
+.container-login .card {
+  background-color: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Header styles */
+.title {
+  font-size: 2rem;
+  color: #333333;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.description {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Form elements */
+.form .input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.input-group .input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+}
+
+.input-group .input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  outline: none;
+}
+
+/* Button styling */
+.button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:disabled {
+  background-color: #b3d1f3;
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #3c7dc9;
+}
+
+/* Error styling */
+.validation-error {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: #e2ae6a;
+  border-left: 4px solid  #362a05;
+  color: #472b06;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* API error alert */
+.alert {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  color: #856404;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .login-page .card {
-    background: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  .login-page .title {
-    font-size: 2.5rem;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    margin-bottom: 0.5rem;
+  100% {
+    background-position: 0% 50%;
   }
-  
-  .login-page .description {
-    font-size: 1.5rem;
-    font-family: cursive;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #555;
-  }
-  
-  .login-page .form {
-    display: flex;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: medium;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .login-page .input-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .login-page .input {
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-  }
-  
-  .login-page .button {
-    padding: 0.75rem;
-    background-color: #2563eb;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-  }
-  
-  .login-page .button:disabled {
-    background-color: #93c5fd;
-    cursor: not-allowed;
-  }
-  
-  .login-page .alert {
-    margin-top: 1rem;
-    background-color: #fee2e2;
-    color: #b91c1c;
-    padding: 0.75rem;
-    border-radius: 0.25rem;
-  }
-  
+}
