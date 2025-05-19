@@ -78,15 +78,16 @@ src/
 
 ## ▶️ Getting Started
 
-1. **Clone the Repository**
+1. You can reun the app locally by ***Cloning the Repository*** using the following commands:
    ```
-   git clone https://github.com/<your-username>/dog-search-app.git
-   cd dog-search-app
+   https://github.com/SR-Pittu/FetchFrontendTakeHomeExercise.git
+   cd FetchFrontendTakeHomeExercise
    ```
 
 2. Install Dependencies
    ```
    npm install
+   npm install react react-dom react-router-dom
    ```
 
 3. Start the App
