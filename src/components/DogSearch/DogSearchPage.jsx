@@ -144,7 +144,7 @@ function DogSearchPage() {
     try {
       await logout();
       // Redirect to login page or homepage after logout
-      window.location.href = "/login";
+      window.location.href = "/#/login";
     } catch (error) {
       alert("Logout failed. Please try again.");
     }
@@ -153,7 +153,7 @@ function DogSearchPage() {
   return (
     <div className="dog-search-page">
       <header className="header">
-        <div className="container">
+        <div className="container-header">
           <h1 className="title">🐶 Find Your Perfect Dog!</h1>
           <button className="logout-button" onClick={handleLogout}>
           Logout
@@ -163,7 +163,7 @@ function DogSearchPage() {
       </header>
 
       <main className="main-content">
-        <div className="container">
+        <div className="container-body">
           <div className="filter-and-list">
             <aside className="sidebar">
               <FilterOptions

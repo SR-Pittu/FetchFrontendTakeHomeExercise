@@ -16,15 +16,14 @@
   min-height: 100vh;
 }
 
-body,
-html {
+body{
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
 /* Full-width container */
-.container {
+.container-body {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -40,7 +39,7 @@ html {
   padding: 1.5rem 80px;
 }
 
-.header .container {
+.header .container-header {
   display: flex;
   align-items: center;
   justify-content: center; 
@@ -50,7 +49,7 @@ html {
 /* Title centered horizontally */
 .title {
   font-size: 3em;
-  font-family: Brush Script, cursive;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: darkslateblue;
   margin: 0;
   user-select: none;
@@ -102,7 +101,7 @@ html {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: sticky;
-  top: 1rem;
+  top: 10px;
   max-height: calc(100vh - 2rem);
   overflow-y: auto;
 }
@@ -112,12 +111,12 @@ html {
 /* Dog List Section Styling */
 .dog-list-section {
   flex: 1 1 auto;
-  min-width: 300px;
+  min-width: 200px;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  overflow-x: auto;
+  overflow-x: clip;
 }
 
 /* Loading indicator */
@@ -283,7 +282,7 @@ html {
     padding: 0;
   }
   .sidebar {
-    position: sticky;
+    position: relative;
     max-height: none;
     overflow-y: visible;
     flex: none;

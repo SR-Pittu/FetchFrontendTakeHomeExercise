@@ -1,5 +1,7 @@
 /* FilterOptions.css */
 .filter-options-container {
+    position: sticky;
+    top: 1rem;
     border: 1px solid #d4d4d4;
     padding: 20px;
     border-radius: 12px;
