@@ -1,4 +1,4 @@
-# Dog Search Application
+# Dog Fetch Application
 
 This is a web application built using **React**, **HTML**, **CSS**, and **JavaScript**. The application allows users to search for and explore information about different dog breeds.
 
@@ -19,12 +19,12 @@ This is a web application built using **React**, **HTML**, **CSS**, and **JavaSc
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/dog-search-app.git
-   cd dog-search-app
+   bash
+   ```git clone https://github.com/your-username/dog-search-app.git```
+   ```cd dog-search-app```
 
 
-   # Dog Search Application
+# Dog Fetch Application
 
 A responsive React application that allows users to search for and explore information about different dog breeds. Built using React, HTML, CSS, and JavaScript.
 
