@@ -49,6 +49,7 @@ A responsive React application that allows users to search for and explore infor
 - **HTML**: For structuring the application.
 
 ## 📁 Project Structure
+```
 src/
 ├── components/
 |   ├── Auth/
@@ -69,6 +70,7 @@ src/
 |   └── Pagination.css
 └──  services/
     └──api.js
+```
 
 ## ▶️ Getting Started
 
@@ -88,3 +90,5 @@ src/
    npm start
    ```
 4. Open the application in your browser at http://localhost:3000
+
+5. You can open the application in your browser at https://fetchfrontendexercise.netlify.app
