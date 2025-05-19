@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import {
   getBreeds,
   searchDogs,
@@ -15,7 +15,7 @@ import "../../index/DogSearchPage.css";
 function DogSearchPage() {
   const [breeds, setBreeds] = useState([]);
   const [dogs, setDogs] = useState([]);
-  const [totalDogs, setTotalDogs] = useState(0);
+  const [, setTotalDogs] = useState(0);
 
   const [filters, setFilters] = useState({
     breeds: [],
@@ -44,11 +44,7 @@ function DogSearchPage() {
     fetchBreeds();
   }, []);
 
-  useEffect(() => {
-    fetchDogs();
-  }, [filters, currentPage, pageSize]);
-
-  const fetchDogs = async () => {
+  const fetchDogs = useCallback(async () => {
     setLoading(true);
     try {
       const params = {
@@ -64,7 +60,6 @@ function DogSearchPage() {
         setDogs(dogDetails);
         setTotalDogs(data.total);
 
-        // Set hasMore true if there are more results beyond the current page
         const totalPages = Math.ceil(data.total / pageSize);
         setHasMore(currentPage < totalPages);
       } else {
@@ -80,16 +75,15 @@ function DogSearchPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filters, currentPage, pageSize]);
+
+  useEffect(() => {
+    fetchDogs();
+  }, [fetchDogs]);
 
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
     setCurrentPage(1);
-  };
-
-  const handlePageChange = (newPage) => {
-    if (newPage < 1) return;
-    setCurrentPage(newPage);
   };
 
   const handlePageSizeChange = (event) => {
